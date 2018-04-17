@@ -2,10 +2,12 @@
 
 class Imone {
     public $pavadinimas;
+    public $kodas;
     private $sarasas = [];
-    function __construct($p)
+    function __construct($p, $k)
     {
         $this->pavadinimas = $p;
+        $this->kodas = $k;
     }
     function darbuotojas($vardas, $pavarde, $par){
         $this->sarasas[] = [
@@ -15,7 +17,7 @@ class Imone {
         ];
     }
     function getInfo(){
-        echo $this->pavadinimas . '<br>';
+        echo $this->pavadinimas . ' (' . $this->kodas . ')<br>';
         echo '<table>';
         foreach ($this->sarasas as $darbuotojas){
         echo '<tr>';
@@ -27,8 +29,9 @@ class Imone {
             echo '</table>';
     }
 }
-$o = new Imone('CodeAcademy');
+$o = new Imone('CodeAcademy', '111222333');
 $o->darbuotojas('Jonas', 'Jonaitis', 'direktorius');
 $o->darbuotojas('Petras', 'Petraitis', 'direktorius2');
 $o->darbuotojas('Antanas', 'Antanaitis', 'direktorius3');
 $o->getInfo();
+
