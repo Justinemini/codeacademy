@@ -52,6 +52,7 @@ $o->gautiImonesInfo();
 echo '<br>';
 $o->gautiDarbuotojus();
 print_r($o->darbuotojai);
+echo '<br>';echo '<br>';echo '<br>';
 
 
 
@@ -59,7 +60,34 @@ print_r($o->darbuotojai);
 /**
 Sukurti klasę darbuotojai, kurioje yra savybė skirta darbuotojų sąrašui saugoti. Sukurti metodą, kurio pagalba galima patalpinti darbuotojo duomenis į sąrašą: asmens kodas, pavarde ir vardas, pareigos, atlyginimas. Sukurti metodą, kurio pagalba galima būtų pašalinti darbuotojo duomenis iš sąrašo pagal asmens kodą. Pademonstruoti veikimą.
  */
+class darbuotojai
+{
+    public $darbuotojai = [];
 
+    function itrauktiDarbuotoja($asmensKodas, $pavarde, $vardas, $pareigos, $atlyginimas)
+    {
+        $this->darbuotojai[$asmensKodas] = [
+            'asmens kodas' => $asmensKodas,
+            'Pavarde' => $pavarde,
+            'Vardas' => $vardas,
+            'Pareigos' => $pareigos,
+            'Atlyginimas' => $atlyginimas
+        ];
+    }
+
+    function pasalintiDarbuotoja($asmensKodas){
+        unset($this->darbuotojai[$asmensKodas]);
+    }
+}
+$darbuotojai = new darbuotojai();
+$darbuotojai->itrauktiDarbuotoja(411111111111, 'Rasiene', 'Rasa', 'vadove', 1000);
+$darbuotojai->itrauktiDarbuotoja(4111111111112, 'Rasiene2', 'Dana', 'vadove2', 1000);
+$darbuotojai->itrauktiDarbuotoja(4111111111113, 'Rasiene3', 'Diana', 'vadove3', 1000);
+$darbuotojai->itrauktiDarbuotoja(4111111111114, 'Rasiene4', 'Simona', 'vadove4', 1000);
+print_r($darbuotojai->darbuotojai);
+echo '<br>';
+$darbuotojai->pasalintiDarbuotoja('4111111111113');
+print_r($darbuotojai->darbuotojai);
 
 
 /**
