@@ -88,8 +88,52 @@ print_r($darbuotojai->darbuotojai);
 echo '<br>';
 $darbuotojai->pasalintiDarbuotoja('4111111111113');
 print_r($darbuotojai->darbuotojai);
-
+echo '<br>';echo '<br>';echo '<br>';
 
 /**
 Sukurti klasę, kurioje yra įmonės akcininkų sąrašas. Sukurti metodą, kurio pagalba galima į sąrašą įvesti įmonės akcininkų duomenis: vardas, pavardė, akcijų skaičius. Akcininkų sąrašą surūšiuoti pagal turimų akcijų skaičių mažėjančia tvarka. Sukurti metodą, kuris išvestu akcininikų sąrašą: vardas, pavardė, turimų akcijų kiekis procentais nuo visų akcijų skaičiaus. Pademonstruoti veikimą.
  */
+
+class ImonesAkcininkai
+{
+    public $akcininkai = [];
+
+    function itrauktiAkcininkus($vardas, $pavarde, $akcijuSkaicius)
+    {
+        $this->akcininkai[] = [
+
+            'vardas' => $vardas,
+            'pavarde' => $pavarde,
+            'akcijuSkaicius' => $akcijuSkaicius
+        ];
+    usort($this->akcininkai, function ($a, $b) {
+        if ($a['akcijuSkaicius'] > $b['akcijuSkaicius']) return -1;
+        elseif ($a['akcijuSkaicius'] < $b['akcijuSkaicius']) return 1;
+        else 0;
+    });
+    }
+function info(){
+        $sum = 0;
+        foreach ($this->akcininkai as $akcininkas){
+            $sum+=$akcininkas['akcijuSkaicius'];
+        }
+echo '<table>';
+    foreach ($this->akcininkai as $akcininkas) {
+        echo '<tr>';
+        echo '<td>' . $akcininkas['vardas'] . '</td>';
+        echo '<td>' . $akcininkas['pavarde'] . '</td>';
+        echo '<td>' . round(($akcininkas['akcijuSkaicius'] / $sum) * 100, 1) . '% </td>';
+        echo '</tr>';
+    }
+        echo '</table>';
+    }
+}
+
+$akcininkai = new ImonesAkcininkai();
+$akcininkai->itrauktiAkcininkus('Jonas', 'Jonaitis', '5');
+$akcininkai->itrauktiAkcininkus('Petras', 'Petraitis', '5');
+$akcininkai->itrauktiAkcininkus('Asta', 'Astaite', '1');
+$akcininkai->itrauktiAkcininkus('Paulina', 'Paulyte', '50');
+print_r($akcininkai->akcininkai);
+$akcininkai->info();
+
