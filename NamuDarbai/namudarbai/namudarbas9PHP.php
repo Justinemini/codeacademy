@@ -60,3 +60,9 @@ foreach ($skaiciumasyvas as $key => $skaicius1) {
 print_r($skaiciumasyvas);
 echo '<br>';
 echo '<br>';
+
+
+//TRUMPIAU:
+// $f = 'labas rytas';
+//echo strlen($f) . '<br>';
+//echo substr($f, 0, 5) . '<br>';

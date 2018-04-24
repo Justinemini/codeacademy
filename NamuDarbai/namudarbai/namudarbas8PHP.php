@@ -49,6 +49,46 @@ foreach ($skaiciumasyvas as $skaicius) {
 }
 echo "suma: " . $suma . "<br>";
 echo "kiekis: " . $kiekis . "<br>";
-echo $suma/$kiekis;
+echo "vidurkis: " . $suma/$kiekis;
+echo '<br>';
+echo '<br>';
+echo '<br>';
+//baigiasi namu darbas
 
 
+$suma = 0;
+$kiekis = 0;
+$skaiciumasyvas = [1, 10, 11, 12, 13];
+foreach ($skaiciumasyvas as $skaicius) {
+    if ($skaicius % 2 !=0) {
+        $suma += $skaicius;
+        $kiekis++;
+    }
+}
+echo "suma: " . $suma . "<br>";
+echo "kiekis: " . $kiekis . "<br>";
+echo "vidurkis: " . $suma/$kiekis;
+echo '<br>';
+echo '<br>';
+
+
+//trefke
+
+$skaiciumasyvas = [1, 10, 11, 12, 13];
+for ($i = 0; $i<count($skaiciumasyvas); $i++) {
+    if ($skaiciumasyvas[$i] % 2 == 0) {
+        $suma += $m[$i];
+        $kiekis++;
+    }
+}
+echo $suma / $kiekis;
+echo '<br>';
+echo '<br>';
+
+
+$skaiciumasyvas = [1, 10, 11, 12, 13];
+while ($i <count($skaiciumasyvas)) {
+    $suma +=$skaiciumasyvas[$i];
+    $i++;
+}
+echo $suma / $kiekis;

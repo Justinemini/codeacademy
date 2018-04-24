@@ -18,7 +18,7 @@ for ($i = 0; $i<count($m); $i++){
 //$a2 = array_map(function($e){
 //return ucfirst(strtolower($e));
 //}, $m);
-print_r($m);
+//print_r($m);
 echo '<br>';
 echo '<br>';
 

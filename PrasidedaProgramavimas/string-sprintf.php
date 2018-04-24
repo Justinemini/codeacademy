@@ -1,6 +1,6 @@
 <?php
 
-$a = "%a yra %a studentas<br>"; //turi istatyt i sablona reiksmes:
+$a = "%s yra %s studentas <br>"; //turi istatyt i sablona reiksmes:
 
 echo sprintf($a, 'Jonas', 'KTU');
 echo sprintf($a, 'Petras', 'VDU');
