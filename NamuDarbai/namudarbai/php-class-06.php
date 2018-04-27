@@ -18,20 +18,17 @@ class prekiuSarasas{
             if ($a['Kaina']>$b['Kaina']) return 1;
             elseif ($a['Kaina']<$b['Kaina']) return -1;
             else return 0;
-        }
-        );
+        });
     }
 
     function pigiausiosPrekes()
     {
         $m[] = 0;
-        $kaina = 10000;
-        for ($i = 0; $i < count($this->prekes) && $i < 3; $i++) {
-            $m = $this->prekes[$i];
+        for ($i = 0; $i < count($this->prekes) && $i<3; $i++) {
+            $m[] = $this->prekes[$i];
         }
             return $m;
     }
-
 }
 
 $o = new prekiuSarasas();
