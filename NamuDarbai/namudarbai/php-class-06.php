@@ -22,12 +22,14 @@ class prekiuSarasas{
         );
     }
 
-    function pigiausiosPrekes(){
+    function pigiausiosPrekes()
+    {
         $m[] = 0;
         $kaina = 10000;
-        for ($i = 0; $i<count($this->prekes) && $i<3);
+        for ($i = 0; $i < count($this->prekes) && $i < 3; $i++) {
             $m = $this->prekes[$i];
-                return $m;
+        }
+            return $m;
     }
 
 }
@@ -37,4 +39,5 @@ $o->sukeltiPrekes('KnK1', 100.01, '1 vnt');
 $o->sukeltiPrekes('KnK2', 100, '2 vnt');
 $o->sukeltiPrekes('KnK3', 200.39, '3 vnt');
 $o->sukeltiPrekes('KnK4', 200.22, '4 vnt');
-$o->pigiausiosPrekes();
+$rez = $o->pigiausiosPrekes();
+print_r($rez);
