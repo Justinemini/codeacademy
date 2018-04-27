@@ -9,11 +9,17 @@ class prekiuSarasas{
     public $prekes = [];
 
     function sukeltiPrekes($pavadinimas, $kaina, $kiekis){
-        $prekes[] = [
+        $this->prekes[] = [
             'Pavadinimas' => $pavadinimas,
             'Kaina' => $kaina,
             'Kiekis' => $kiekis
         ];
+        usort($this->prekes, function ($a, $b){
+            if ($a['Kaina']>$b['Kaina']) return 1;
+            elseif ($a['Kaina']<$b['Kaina']) return -1;
+            else return 0;
+        }
+        );
     }
 
     function pigiausiosPrekes(){
