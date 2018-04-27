@@ -23,18 +23,18 @@ class prekiuSarasas{
     }
 
     function pigiausiosPrekes(){
+        $m[] = 0;
         $kaina = 10000;
-        foreach ($this->prekes as $pigiausia) {
-            if ($pigiausia['Kaina'] == $kaina < $kaina) $kaina++;
-        }
-        return $kaina;
+        for ($i = 0; $i<count($this->prekes) && $i<3);
+            $m = $this->prekes[$i];
+                return $m;
     }
+
 }
 
 $o = new prekiuSarasas();
-$o->sukeltiPrekes('KnK1', 200, '1 vnt');
+$o->sukeltiPrekes('KnK1', 100.01, '1 vnt');
 $o->sukeltiPrekes('KnK2', 100, '2 vnt');
 $o->sukeltiPrekes('KnK3', 200.39, '3 vnt');
 $o->sukeltiPrekes('KnK4', 200.22, '4 vnt');
 $o->pigiausiosPrekes();
-print_r($);//nebaigta
