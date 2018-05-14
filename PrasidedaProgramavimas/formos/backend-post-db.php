@@ -34,9 +34,10 @@ try {
 
     $o = new forma('localhost', 'justine', 'root', 'root'); // susikurti klasės egzempliorių
     $o->add(); // įdėti asmens POST formos duomenis į masyvą (ir išsaugoti faile)
-    $o->info();} // atvaizduoti asmenų sąrašą lentele
+    $o->info();
+} // atvaizduoti asmenų sąrašą lentele
 
 catch(PDOException $e) {
-        var_dump($e->getMessage());
+        echo ($e->getMessage());
 }
 echo '<a href="frontend-post-db.html">Atgal</a>';
