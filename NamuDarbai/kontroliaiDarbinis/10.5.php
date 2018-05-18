@@ -22,19 +22,17 @@ class sarasas
     {
         $x = [];
         foreach ($this->sarasas as $islaike) {
-            if ($islaike['Fizika'] >= 5 && $islaike['Matematika'] >= 5 && $islaike['Programavimas'] >= 5) $x[] = $islaike['Vardas'];
+            if ($islaike['Fizika']>= 5 and $islaike['Matematika']>= 5 && $islaike['Programavimas']>= 5) $x[] = $islaike['Vardas'];
         }
-        return $x();
+        return $x;
     }
 
     function vidurkis(){
         $suma=0;
-        $kiekis=0;
-        foreach ($this->sarasas as $a){
-            $suma+= $a['Fizika']+$a['Matematika']+$a['Programavimas'];
-            $kiekis++;
+        foreach ($this->sarasas as $islaike){
+            $suma+= $islaike['Fizika']+$islaike['Matematika']+$islaike['Programavimas'];
         }
-        return $suma / ($kiekis*3);
+        return $suma / (count($this->sarasas) * 3);
     }
 }
 
@@ -43,10 +41,7 @@ $o->studentas('Vidas', 10, 10, 10);
 $o->studentas('Kestas', 2, 2, 2);
 $o->studentas('Antanas', 10, 4, 10);
 $o->studentas('Valdas', 10, 5, 10);
-var_dump($o);
 
 $y = $o->islaike();
 var_dump($y);
-
-$x = $o->vidurkis();
-echo "Vidurkis: $x";
+echo $o->vidurkis();
